@@ -1,6 +1,8 @@
 #pragma once
 
-char runUI_User_Choice;
+char user_choice;
 bool isRunning = false;
 
-bool runUI();
+void displayMenu();
+void menuSelection(char choice);
+bool quitUI();
