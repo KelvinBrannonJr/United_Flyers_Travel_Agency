@@ -2,7 +2,7 @@
 #include <string>
 
 class Planner {
-	// Constructor
+	// Planner Constructor
 	Planner(std::string home, std::string destination);
 
 	// Private members
@@ -12,18 +12,18 @@ class Planner {
 
 	public:
 
-		// Setters
-		std::string setComingFrom(std::string);
-		std::string setGoingTo(std::string);
+		// Planner Setters
+		void setComingFrom(std::string s_home);
+		void setGoingTo(std::string s_dest);
 
-		// Getters
-		void getComingFrom() const;
-		void getGoingTo() const;
+		// Planner Getters
+		std::string getComingFrom() const;
+		std::string getGoingTo() const;
 
-		// Utility
+		// Planner Utility
 		void printTrip();
 
-		// Destructor
+		// Planner Destructor
 		~Planner();
 
 
