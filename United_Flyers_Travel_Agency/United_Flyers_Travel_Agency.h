@@ -1,5 +1,5 @@
-#ifndef UNITED_FLYERS_TRAVEL_AGENCY_H
-#define UNITED_FLYERS_TRAVEL_AGENCY_H
+#pragma once
+#include <string>
 
 // Variables
 std::string first_name;
@@ -21,5 +21,3 @@ void planTrip();
 // Utility healper functions
 void displayMenu();
 void menuSelection(char choice);
-
-#endif

@@ -1,7 +1,7 @@
 #include <iostream>
-#include <string>
 #include "United_Flyers_Travel_Agency.h"
 
+// TASK: Continue implementing planTrip() function, make utility functions to get user data
 
 int main()
 {	
@@ -15,7 +15,6 @@ int main()
 
 		std::cin >> user_choice;
 		menuSelection(user_choice);
-
 	}
 
 
