@@ -13,6 +13,11 @@
 
 class Estimate {
 	public:
+		// Constant memebers
 		const int RATE_PER_SEAT = 75;
+		const int ECONOMY_SEAT_MODIFIER = 1;
+		const int PREMIUM_ECONOMY_SEAT_MODIFIER = 2;
+		const int BUSINESS_SEAT_MODIFIER = 3;
+		const int FIRST_CLASS_SEAT_MODIFIER = 4;
 
 };
