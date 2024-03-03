@@ -21,12 +21,21 @@
     <ClCompile Include="Planner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EstimateCost.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="United_Flyers_Travel_Agency.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Planner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EstimateCost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightSeatClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

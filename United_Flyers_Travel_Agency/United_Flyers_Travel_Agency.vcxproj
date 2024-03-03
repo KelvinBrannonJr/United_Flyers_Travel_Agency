@@ -129,10 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EstimateCost.cpp" />
     <ClCompile Include="Planner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EstimateCost.h" />
+    <ClInclude Include="FlightSeatClass.h" />
     <ClInclude Include="Planner.h" />
     <ClInclude Include="United_Flyers_Travel_Agency.h" />
   </ItemGroup>

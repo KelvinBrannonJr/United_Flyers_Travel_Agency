@@ -39,7 +39,6 @@ void planTrip() {
 	
 	Planner plan(leaving_city,leaving_state,arriving_city,arriving_state);
 	plan.printTrip();
-	
 }
 
 // Utility UI display menu
