@@ -3,8 +3,8 @@
 
 class Planner {
 
-	// Private members
 	private:
+		// Private members
 		std::string coming_from_city;
 		std::string coming_from_state;
 		std::string going_to_city;
