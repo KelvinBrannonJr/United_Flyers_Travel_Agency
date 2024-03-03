@@ -8,3 +8,5 @@
 5: Tally up all cost and output total price for trip.
 
 */
+
+#include "EstimateCost.h"
