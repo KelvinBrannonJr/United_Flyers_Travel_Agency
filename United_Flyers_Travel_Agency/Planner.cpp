@@ -1,32 +1,62 @@
 #include "Planner.h"
 #include <iostream>
 
-
-
 // Planner Constructor
-Planner::Planner(std::string home, std::string destination) {
-	this->coming_from = home;
-	this->going_to = destination;
+Planner::Planner() {
+
+}
+
+Planner::Planner(std::string cf_city, std::string cf_state, std::string gt_city, std::string gt_state) {
+	this->coming_from_city = cf_city;
+	this->coming_from_state = cf_state;
+	this->going_to_city = gt_city;
+	this->going_to_state = gt_state;
 }
 
 
 // Planner Setters
-void Planner::setComingFrom(std::string s_home) {
-	this->coming_from = s_home;
+void Planner::setComingFromCity(std::string s_cf_city) {
+	this->coming_from_city = s_cf_city;
 }
 
-void Planner::setGoingTo(std::string s_dest) {
-	this->going_to = s_dest;
+void Planner::setComingFromState(std::string s_cf_state) {
+	this->coming_from_state = s_cf_state;
 }
 
+void Planner::setGoingToCity(std::string s_gt_city) {
+	this->going_to_city = s_gt_city;
+}
+
+void Planner::setGoingToState(std::string s_gt_state) {
+	this->going_to_state = s_gt_state;
+}
 
 // Planner Getters
-std::string Planner::getComingFrom() const {
-	return this->coming_from;
+std::string Planner::getComingFromCity() const {
+	return this->coming_from_city;
 }
 
-std::string Planner::getGoingTo() const {
-	return this->going_to;
+std::string Planner::getComingFromState() const {
+	return this->coming_from_state;
+}
+
+std::string Planner::getGoingToCity() const {
+	return this->going_to_city;
+}
+
+std::string Planner::getGoingToState() const {
+	return this->going_to_state;
+}
+
+// Planner Utility
+void Planner::printTrip() {
+	std::cout << std::endl;
+	std::cout << "Printing Planner Details" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "Leaving from: " << this->getComingFromCity() << ", " << this->getComingFromState() 
+			<< " \tArriving to: " << this->getGoingToCity() << ", " << this->getGoingToState() 
+	<< std::endl;
 }
 
 // Destructor

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "United_Flyers_Travel_Agency.h"
+#include "Planner.h"
 
-// TASK: Continue implementing planTrip() function, make utility functions to get user data
 
 int main()
 {	
@@ -16,13 +16,30 @@ int main()
 		std::cin >> user_choice;
 		menuSelection(user_choice);
 	}
-
-
 }
 
 // Feature function for planning a trip
 void planTrip() {
-	std::cout << "Lets start by getting your name: " << std::endl;
+	std::string leaving_city;
+	std::string leaving_state;
+	std::string arriving_city;
+	std::string arriving_state;
+
+	std::cout << "What city are you flying from?: " << std::endl;
+	std::cin >> leaving_city;	
+	
+	std::cout << "Ok, in what state are you leaving from?: " << std::endl;
+	std::cin >> leaving_state;
+
+	std::cout << "What is the city of your destination?: " << std::endl;
+	std::cin >> arriving_city;
+
+	std::cout << "Ok, what is the state of your destination?: " << std::endl;
+	std::cin >> arriving_state;
+	
+	Planner plan(leaving_city,leaving_state,arriving_city,arriving_state);
+	plan.printTrip();
+	
 }
 
 // Utility UI display menu
