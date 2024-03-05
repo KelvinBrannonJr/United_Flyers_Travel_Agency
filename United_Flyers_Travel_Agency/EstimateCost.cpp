@@ -11,3 +11,38 @@
 
 #include "EstimateCost.h"
 
+// Constructor
+Estimate::Estimate() {
+
+}
+
+// Estimate Setters
+void Estimate::setHours(int s_hour) {
+	time_hours = s_hour;
+}
+
+void Estimate::setNumOfSeats(int s_num_seats) {
+	num_of_seats = s_num_seats;
+}
+
+void Estimate::setNumOfLuggage(int s_num_luggage) {
+	num_of_luggage = s_num_luggage;
+}
+
+
+// Estimate Getters
+int Estimate::getHours() const {
+	return time_hours;
+}
+
+int Estimate::getNumOfSeats() const {
+	return num_of_seats;
+}
+
+int Estimate::getNumOfLuggage() const {
+	return num_of_luggage;
+}
+
+SeatingClass Estimate::getSeatClass() const {
+	return seat_class;
+}
