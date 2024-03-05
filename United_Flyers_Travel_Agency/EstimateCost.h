@@ -13,6 +13,7 @@ class Estimate {
 	public:
 		// Estimate Constructor
 		Estimate();
+		Estimate(int c_num_hours, int c_num_seats, int c_num_luggauge, SeatingClass c_seat_class);
 
 		// Estimate Constant members
 		const int RATE_PER_SEAT = 75;
@@ -21,6 +22,9 @@ class Estimate {
 		const int BUSINESS_SEAT_MODIFIER = 3;
 		const int FIRST_CLASS_SEAT_MODIFIER = 4;
 		const int ADDITIONAL_LUGGAGE_COST = 35;
+
+		// Estimate members
+		bool is_Addtional_Luggage;
 
 
 		// Estimate Setters
@@ -34,6 +38,10 @@ class Estimate {
 		int getNumOfSeats() const;
 		int getNumOfLuggage() const;
 		SeatingClass getSeatClass() const;
+
+		// Utility
+		int calcCost();
+
 
 		// Estimate Destructor
 		~Estimate();
