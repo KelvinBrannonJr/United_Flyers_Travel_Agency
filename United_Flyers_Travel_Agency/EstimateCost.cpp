@@ -70,7 +70,21 @@ SeatingClass Estimate::getSeatClass() const {
 
 
 // Utility
-int calcCost() {
+void Estimate::convertHours(unsigned int hrs) {
+	if (hrs > 0 && hrs <= 12) {
+		std::cout << hrs << "am" << std::endl;
+	}
+	else if (hrs > 12 && hrs <= 24) {
+		hrs = hrs - 12;
+		std::cout << hrs << "pm" << std::endl;
+	}
+	else {
+		std::cout << "Sorry that is not a valid hour between 1 - 24" << std::endl;
+	}
+}
+
+
+int Estimate::calcCost() {
 	int hour;
 	int seats;
 

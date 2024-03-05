@@ -40,6 +40,7 @@ class Estimate {
 		SeatingClass getSeatClass() const;
 
 		// Utility
+		void convertHours(unsigned int hrs);
 		int calcCost();
 
 
