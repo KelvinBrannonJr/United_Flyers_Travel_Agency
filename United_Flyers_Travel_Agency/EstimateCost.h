@@ -5,15 +5,15 @@ class Estimate {
 
 	private:
 		// Estimate Member Variables
-		int time_hours;
-		int num_of_seats;
-		int num_of_luggage;
+		unsigned int time_hours;
+		unsigned int num_of_seats;
+		unsigned int num_of_luggage;
 		SeatingClass seat_class;
 
 	public:
 		// Estimate Constructor
 		Estimate();
-		Estimate(int c_num_hours, int c_num_seats, int c_num_luggauge, SeatingClass c_seat_class);
+		Estimate(unsigned int c_num_hours, unsigned int c_num_seats, unsigned int c_num_luggauge, SeatingClass c_seat_class);
 
 		// Estimate Constant members
 		const int RATE_PER_SEAT = 75;
@@ -24,13 +24,13 @@ class Estimate {
 		const int ADDITIONAL_LUGGAGE_COST = 35;
 
 		// Estimate members
-		bool is_Addtional_Luggage;
+		bool is_Addtional_Luggage = false;
 
 
 		// Estimate Setters
-		void setHours(int s_hour);
-		void setNumOfSeats(int s_num_seats);
-		void setNumOfLuggage(int s_num_luggage);
+		void setHours(unsigned int s_hour);
+		void setNumOfSeats(unsigned int s_num_seats);
+		void setNumOfLuggage(unsigned int s_num_luggage);
 		void setSeatClass(SeatingClass e_seat_class);
 
 		// Estimate Getters
@@ -41,6 +41,7 @@ class Estimate {
 
 		// Utility
 		void convertHours(unsigned int hrs);
+		int calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier);
 		int calcCost();
 
 

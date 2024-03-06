@@ -14,10 +14,13 @@
 
 // Constructor
 Estimate::Estimate() {
-
+	this->time_hours = 0;
+	this->num_of_seats = 0;
+	this->num_of_luggage = 0;
+	this->seat_class = DEFAULT;
 }
 
-Estimate::Estimate(int c_num_hours, int c_num_seats, int c_num_luggauge, SeatingClass c_seat_class) {
+Estimate::Estimate(unsigned int c_num_hours, unsigned int c_num_seats, unsigned int c_num_luggauge, SeatingClass c_seat_class) {
 	this->time_hours = c_num_hours;
 	this->num_of_seats = c_num_seats;
 	this->num_of_luggage = c_num_luggauge;
@@ -25,15 +28,15 @@ Estimate::Estimate(int c_num_hours, int c_num_seats, int c_num_luggauge, Seating
 }
 
 // Estimate Setters
-void Estimate::setHours(int s_hour) {
+void Estimate::setHours(unsigned int s_hour) {
 	time_hours = s_hour;
 }
 
-void Estimate::setNumOfSeats(int s_num_seats) {
+void Estimate::setNumOfSeats(unsigned int s_num_seats) {
 	num_of_seats = s_num_seats;
 }
 
-void Estimate::setNumOfLuggage(int s_num_luggage) {
+void Estimate::setNumOfLuggage(unsigned int s_num_luggage) {
 	num_of_luggage = s_num_luggage;
 }
 
@@ -81,6 +84,30 @@ void Estimate::convertHours(unsigned int hrs) {
 	else {
 		std::cout << "Sorry that is not a valid hour between 1 - 24" << std::endl;
 	}
+}
+
+int Estimate::calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier) {
+	int seat_total;
+	switch (seat_tier) {
+		case ECONOMY:
+			seat_total = num_seats * ECONOMY_SEAT_MODIFIER;
+			break;
+		
+		case PREMIUM_ECONOMY:
+			seat_total = num_seats * PREMIUM_ECONOMY_SEAT_MODIFIER;
+			break;
+
+		case BUSINESS:
+			seat_total = num_seats * BUSINESS_SEAT_MODIFIER;
+			break;
+
+		case FIRST_CLASS:
+			seat_total = num_seats * FIRST_CLASS_SEAT_MODIFIER;
+		
+		case DEFAULT:
+			std::cout << "Please enter a seat class" << std::endl;
+	}
+	return seat_total;
 }
 
 
