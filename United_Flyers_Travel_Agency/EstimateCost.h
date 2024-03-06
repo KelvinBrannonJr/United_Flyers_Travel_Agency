@@ -23,9 +23,6 @@ class Estimate {
 		const int FIRST_CLASS_SEAT_MODIFIER = 4;
 		const int ADDITIONAL_LUGGAGE_COST = 35;
 
-		// Estimate members
-		bool is_Addtional_Luggage = false;
-
 
 		// Estimate Setters
 		void setHours(unsigned int s_hour);
@@ -42,6 +39,7 @@ class Estimate {
 		// Utility
 		void convertHours(unsigned int hrs);
 		int calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier);
+		int calcLuggageTotal(unsigned int num_luggage);
 		int calcCost();
 
 

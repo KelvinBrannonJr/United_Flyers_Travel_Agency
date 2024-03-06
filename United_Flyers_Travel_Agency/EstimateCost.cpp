@@ -90,24 +90,41 @@ int Estimate::calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier) {
 	int seat_total;
 	switch (seat_tier) {
 		case ECONOMY:
-			seat_total = num_seats * ECONOMY_SEAT_MODIFIER;
+			return seat_total = (num_seats * RATE_PER_SEAT) * ECONOMY_SEAT_MODIFIER;
 			break;
 		
 		case PREMIUM_ECONOMY:
-			seat_total = num_seats * PREMIUM_ECONOMY_SEAT_MODIFIER;
+			return seat_total = (num_seats * RATE_PER_SEAT) * PREMIUM_ECONOMY_SEAT_MODIFIER;
 			break;
 
 		case BUSINESS:
-			seat_total = num_seats * BUSINESS_SEAT_MODIFIER;
+			return seat_total = (num_seats * RATE_PER_SEAT) * BUSINESS_SEAT_MODIFIER;
 			break;
 
 		case FIRST_CLASS:
-			seat_total = num_seats * FIRST_CLASS_SEAT_MODIFIER;
+			return seat_total = (num_seats * RATE_PER_SEAT) * FIRST_CLASS_SEAT_MODIFIER;
+			break;
 		
 		case DEFAULT:
 			std::cout << "Please enter a seat class" << std::endl;
+			break;
+
+		default:
+			std::cout << "Enter a valid seat number and seat class" << std::endl;
 	}
-	return seat_total;
+}
+
+int Estimate::calcLuggageTotal(unsigned int num_luggage) {
+	int luggage_total;
+	if (num_luggage > 0 && num_luggage <= 2) {
+		return luggage_total = 0;
+	}
+	else if (num_luggage > 2) {
+		return luggage_total = num_luggage * ADDITIONAL_LUGGAGE_COST;
+	}
+	else {
+		std::cout << "Sorry you did not enter a valid number for carry-on luggage" << std::endl;
+	}
 }
 
 
