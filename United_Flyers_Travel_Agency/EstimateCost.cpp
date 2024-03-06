@@ -62,15 +62,6 @@ SeatingClass Estimate::getSeatClass() const {
 	return seat_class;
 }
 
-/*
-	CalcCost function should have multiple utility functions to handle individual business logic for each step.
-	1: Implement utility hour converter for input of 24 hour format
-	2: Implement utility to handle arithmetic for additional seats if any.
-	3: Implemet utility to handle arithmetic for additional luggage if any.
-	
-*/
-
-
 
 // Utility
 void Estimate::convertHours(unsigned int hrs) {
@@ -127,21 +118,50 @@ int Estimate::calcLuggageTotal(unsigned int num_luggage) {
 	}
 }
 
+SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
+	if (str_tier == "ECONOMY") {
+		return SeatingClass::ECONOMY;
+	}
+
+	else if (str_tier == "PREMIUM_ECONOMY") {
+		return SeatingClass::PREMIUM_ECONOMY;
+	}
+
+	else if (str_tier == "BUSINESS") {
+		return SeatingClass::BUSINESS;
+	}
+
+	else if (str_tier == "FIRST_CLASS") {
+		return SeatingClass::FIRST_CLASS;
+	}
+	else {
+		std::cout << "Sorry that is an invalid Seat Class Tier" << std::endl;
+	}
+}
+
 
 int Estimate::calcCost() {
-	int hour;
-	int seats;
+	unsigned int hour;
+	unsigned int seats;
+	std::string str_s_tier;
+	SeatingClass s_tier;
 
 	char additional_luggage_decision;
 	int num_addtional_luggage = 0;
 
 	std::cout << "What time of day would you like to depart? (1 - 24): " << std::endl;
 	std::cin >> hour;
-	// FEATURE: Add utility function to handle logic of converting hours format.
 
-	std::cout << "How many seats would you like to reserve:?" << std::endl;
+	convertHours(hour);
+
+	std::cout << "How many seats would you like to reserve?" << std::endl;
 	std::cin >> seats;
-	// FEATURE: Add utility function to handle logic of seats if addtional.
+
+	std::cout << "What class seating would you like? |Options: DEFAULT, ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST_CLASS|" << std::endl;
+	std::cin >> str_s_tier;
+
+	s_tier = strToEnumSeat(str_s_tier);
+	calcSeatTotal(seats, s_tier);
 
 	std::cout << "Will you require addtional carry-on? (Y / N) :Note you are alotted 2 carry-on by default." << std::endl;
 	std::cin >> additional_luggage_decision;

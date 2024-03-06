@@ -41,6 +41,7 @@ class Estimate {
 		int calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier);
 		int calcLuggageTotal(unsigned int num_luggage);
 		int calcCost();
+		SeatingClass strToEnumSeat(std::string str_tier);
 
 
 		// Estimate Destructor
