@@ -139,44 +139,37 @@ SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
 	}
 }
 
-
+/*
+	Create final total cost function to total all costs from calcCost selections
+*/
 int Estimate::calcCost() {
+
+	// Day converter
 	unsigned int hour;
-	unsigned int seats;
-	std::string str_s_tier;
-	SeatingClass s_tier;
-
-	char additional_luggage_decision;
-	int num_addtional_luggage = 0;
-
 	std::cout << "What time of day would you like to depart? (1 - 24): " << std::endl;
 	std::cin >> hour;
 
 	convertHours(hour);
 
+
+	// Seat Reserver
+	unsigned int seats;
 	std::cout << "How many seats would you like to reserve?" << std::endl;
 	std::cin >> seats;
 
+	SeatingClass s_tier;
+	std::string str_s_tier;
 	std::cout << "What class seating would you like? |Options: DEFAULT, ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST_CLASS|" << std::endl;
 	std::cin >> str_s_tier;
 
 	s_tier = strToEnumSeat(str_s_tier);
 	calcSeatTotal(seats, s_tier);
 
-	std::cout << "Will you require addtional carry-on? (Y / N) :Note you are alotted 2 carry-on by default." << std::endl;
-	std::cin >> additional_luggage_decision;
-	if (additional_luggage_decision == 'Y' || additional_luggage_decision == 'y') {
-
-		// FEATURE: Add utility function to handle logic of addtional luggage.
-	}
-	else if (additional_luggage_decision == 'N' || additional_luggage_decision == 'n') {
-		// // FEATURE: Add utility function to handle logic of addtional luggage.
-	}
-	else {
-		std::cout << "Sorry that was an invalid input" << std::endl;
-	}
-
-	
+	// Luggage total logic
+	unsigned int l_num_luggage;
+	std::cout << "How many carry on luggage will you require? *** Additional fee: $35 for MORE THAN 2 carry-on ***" << std::endl;
+	std::cin >> l_num_luggage;
+	calcLuggageTotal(l_num_luggage);
 }
 
 Estimate::~Estimate() {
