@@ -143,6 +143,8 @@ SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
 	Create final total cost function to total all costs from calcCost selections
 */
 int Estimate::calcCost() {
+	int final_seat_total;
+	int final_luggage_total;
 
 	// Day converter
 	unsigned int hour;
@@ -163,13 +165,16 @@ int Estimate::calcCost() {
 	std::cin >> str_s_tier;
 
 	s_tier = strToEnumSeat(str_s_tier);
-	calcSeatTotal(seats, s_tier);
+	final_seat_total = calcSeatTotal(seats, s_tier);
 
 	// Luggage total logic
 	unsigned int l_num_luggage;
 	std::cout << "How many carry on luggage will you require? *** Additional fee: $35 for MORE THAN 2 carry-on ***" << std::endl;
 	std::cin >> l_num_luggage;
-	calcLuggageTotal(l_num_luggage);
+	final_luggage_total = calcLuggageTotal(l_num_luggage);
+
+	// Total all options for final total
+	return final_seat_total + final_luggage_total;
 }
 
 Estimate::~Estimate() {
