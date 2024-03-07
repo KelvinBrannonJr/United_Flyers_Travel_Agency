@@ -43,15 +43,22 @@ void planTrip() {
 }
 
 void estimateTripCost() {
-	int cost;
+	unsigned int seat_cost;
+	unsigned int luggage_cost;
 	Estimate tripCost;
 
 	// TEST: *** Test ALL Estimate methods ***
 
 	// tripCost.convertHours(8); // PASSED
 
-	cost = tripCost.calcSeatTotal(2, FIRST_CLASS);
-	std::cout << "Seat cost:" << cost << std::endl;	// PASSED
+	/*
+		seat_cost = tripCost.calcSeatTotal(2, FIRST_CLASS);
+		std::cout << "Seat cost:" << cost << std::endl;	// PASSED
+	*/
+
+	luggage_cost = tripCost.calcLuggageTotal(3);
+	std::cout << "Luggage cost:" << luggage_cost << std::endl; // PASSED
+
 
 }
 
