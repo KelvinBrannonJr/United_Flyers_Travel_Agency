@@ -1,6 +1,7 @@
 #include <iostream>
 #include "United_Flyers_Travel_Agency.h"
 #include "Planner.h"
+#include "EstimateCost.h"
 
 
 int main()
@@ -41,6 +42,15 @@ void planTrip() {
 	plan.printTrip();
 }
 
+void estimateTripCost() {
+	Estimate tripCost;
+
+	// TEST: Test ALL Estimate methods
+
+	// tripCost.convertHours(8); // PASSED
+
+}
+
 // Utility UI display menu
 void displayMenu() {
 	std::cout << "Select an option from below:" << std::endl;
@@ -65,6 +75,7 @@ void menuSelection(char choice) {
 	case 'E':
 	case 'e':
 		std::cout << user_choice << ": You would like a price estimate of a for a trip." << std::endl;
+		estimateTripCost();
 		break;
 
 	case 'B':

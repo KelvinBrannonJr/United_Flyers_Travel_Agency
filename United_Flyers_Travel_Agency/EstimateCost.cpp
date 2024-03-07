@@ -65,8 +65,11 @@ SeatingClass Estimate::getSeatClass() const {
 
 // Utility
 void Estimate::convertHours(unsigned int hrs) {
-	if (hrs > 0 && hrs <= 12) {
+	if (hrs > 0 && hrs < 12) {
 		std::cout << hrs << "am" << std::endl;
+	}
+	else if (hrs == 12) {
+		std::cout << hrs << "pm" << std::endl;
 	}
 	else if (hrs > 12 && hrs <= 24) {
 		hrs = hrs - 12;
@@ -97,11 +100,12 @@ int Estimate::calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier) {
 			break;
 		
 		case DEFAULT:
-			std::cout << "Please enter a seat class" << std::endl;
+			return seat_total = 0;
 			break;
 
 		default:
-			std::cout << "Enter a valid seat number and seat class" << std::endl;
+			std::cout << "Sorry that is not a valid Seating class" << std::endl;
+			return seat_total = 0;
 	}
 }
 
@@ -115,6 +119,7 @@ int Estimate::calcLuggageTotal(unsigned int num_luggage) {
 	}
 	else {
 		std::cout << "Sorry you did not enter a valid number for carry-on luggage" << std::endl;
+		return luggage_total = 0;
 	}
 }
 
@@ -135,7 +140,7 @@ SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
 		return SeatingClass::FIRST_CLASS;
 	}
 	else {
-		std::cout << "Sorry that is an invalid Seat Class Tier" << std::endl;
+		return SeatingClass::DEFAULT;
 	}
 }
 
