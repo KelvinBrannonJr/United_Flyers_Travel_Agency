@@ -43,11 +43,15 @@ void planTrip() {
 }
 
 void estimateTripCost() {
+	int cost;
 	Estimate tripCost;
 
-	// TEST: Test ALL Estimate methods
+	// TEST: *** Test ALL Estimate methods ***
 
 	// tripCost.convertHours(8); // PASSED
+
+	cost = tripCost.calcSeatTotal(2, FIRST_CLASS);
+	std::cout << "Seat cost:" << cost << std::endl;	// PASSED
 
 }
 
