@@ -17,7 +17,7 @@ Estimate::Estimate() {
 	this->time_hours = 0;
 	this->num_of_seats = 0;
 	this->num_of_luggage = 0;
-	this->seat_class = DEFAULT;
+	this->seat_class = ECONOMY;
 }
 
 Estimate::Estimate(unsigned int c_num_hours, unsigned int c_num_seats, unsigned int c_num_luggauge, SeatingClass c_seat_class) {
@@ -64,19 +64,23 @@ SeatingClass Estimate::getSeatClass() const {
 
 
 // Utility
-void Estimate::convertHours(unsigned int hrs) {
+std::string Estimate::convertHours(unsigned int hrs) {
+	std::string time;
 	if (hrs > 0 && hrs < 12) {
-		std::cout << hrs << "am" << std::endl;
+		time = std::to_string(hrs) + "am";
+		return time;
 	}
 	else if (hrs == 12) {
-		std::cout << hrs << "pm" << std::endl;
+		time = std::to_string(hrs) + "pm";
+		return time;
 	}
 	else if (hrs > 12 && hrs <= 24) {
 		hrs = hrs - 12;
-		std::cout << hrs << "pm" << std::endl;
+		time = std::to_string(hrs) + "pm";
+		return time;
 	}
 	else {
-		std::cout << "Sorry that is not a valid hour between 1 - 24" << std::endl;
+		return time = "Sorry that is not a valid hour between 1 - 24";
 	}
 }
 
@@ -98,11 +102,7 @@ int Estimate::calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier) {
 		case FIRST_CLASS:
 			return seat_total = (num_seats * RATE_PER_SEAT) * FIRST_CLASS_SEAT_MODIFIER;
 			break;
-		
-		case DEFAULT:
-			return seat_total = (num_seats * RATE_PER_SEAT);
-			break;
-
+	
 		default:
 			std::cout << "Sorry that is not a valid Seating class" << std::endl;
 			return seat_total = 0;
@@ -140,7 +140,7 @@ SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
 		return SeatingClass::FIRST_CLASS;
 	}
 	else {
-		return SeatingClass::DEFAULT;
+		return SeatingClass::ECONOMY;
 	}
 }
 
@@ -148,6 +148,7 @@ SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
 	Create final total cost function to total all costs from calcCost selections
 */
 int Estimate::calcCost() {
+	std::string convert_time;
 	int final_seat_total;
 	int final_luggage_total;
 
@@ -156,7 +157,7 @@ int Estimate::calcCost() {
 	std::cout << "What time of day would you like to depart? (1 - 24): " << std::endl;
 	std::cin >> hour;
 
-	convertHours(hour);
+	convert_time = convertHours(hour);
 
 
 	// Seat Reserver
@@ -166,7 +167,7 @@ int Estimate::calcCost() {
 
 	SeatingClass s_tier;
 	std::string str_s_tier;
-	std::cout << "What class seating would you like? |Options: DEFAULT, ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST_CLASS|" << std::endl;
+	std::cout << "What class seating would you like? |Options: ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST_CLASS|" << std::endl;
 	std::cin >> str_s_tier;
 
 	s_tier = strToEnumSeat(str_s_tier);
@@ -179,6 +180,11 @@ int Estimate::calcCost() {
 	final_luggage_total = calcLuggageTotal(l_num_luggage);
 
 	// Total all options for final total
+	std::cout << "Expected time of departure " << convert_time << std::endl;
+	std::cout << "You have reserved " << seats << " flight seats," << std::endl;
+	std::cout << "You've selected " << str_s_tier  << " seating class," << std::endl;
+	std::cout << "You have " << l_num_luggage << " luggage to bring on." << std::endl;
+	std::cout << "Your total cost for the selected flight options: " << "$" << final_seat_total + final_luggage_total << std::endl;
 	return final_seat_total + final_luggage_total;
 }
 
