@@ -24,9 +24,12 @@
     <ClCompile Include="EstimateCost.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Booking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="United_Flyers_Travel_Agency.h">
+    <ClInclude Include="MainUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Planner.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FlightSeatClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Booking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

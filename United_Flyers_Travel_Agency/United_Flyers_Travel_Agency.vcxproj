@@ -129,15 +129,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Booking.cpp" />
     <ClCompile Include="EstimateCost.cpp" />
     <ClCompile Include="Planner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Booking.h" />
     <ClInclude Include="EstimateCost.h" />
     <ClInclude Include="FlightSeatClass.h" />
     <ClInclude Include="Planner.h" />
-    <ClInclude Include="United_Flyers_Travel_Agency.h" />
+    <ClInclude Include="MainUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

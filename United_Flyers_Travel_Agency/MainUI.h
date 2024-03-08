@@ -2,8 +2,6 @@
 #include <string>
 
 // Variables
-std::string first_name;
-std::string last_name;
 std::string flight_from;
 std::string flight_to;
 
@@ -15,7 +13,7 @@ bool isRunning = false;
 bool quitUI();
 
 
-// Feature Functionsvo
+// Feature Functions
 void planTrip();
 
 // Utility healper functions
