@@ -5,6 +5,7 @@
 */
 
 #include "Booking.h"
+#include<iostream>
 
 // Booking Constructors
 Booking::Booking() {
@@ -55,6 +56,8 @@ std::string Booking::getGateId() const {
 	return this->gate_id;
 }
 
-
-
+// Destructors
+Booking::~Booking() {
+	std::cout << "Booking object destroyed" << std::endl;
+}
 
