@@ -38,6 +38,23 @@ void Booking::setGateId(std::string s_gate_id) {
 	this->gate_id = s_gate_id;
 }
 
+// Booking Getters
+int Booking::getFlightNumber() const {
+	return this->flight_number;
+}
+
+int Booking::getCustomerNumber() const {
+	return this->customer_number;
+}
+
+std::string Booking::getAirportName() const {
+	return this->airport_name;
+}
+
+std::string Booking::getGateId() const {
+	return this->gate_id;
+}
+
 
 
 
