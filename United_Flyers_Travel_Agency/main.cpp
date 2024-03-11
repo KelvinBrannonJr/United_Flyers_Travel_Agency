@@ -45,9 +45,10 @@ void planTrip() {
 
 // Enter customer flight options and estimate cost
 void estimateTripCost() {
+	int trip_total;
 
 	Estimate tripCost;
-	tripCost.calcCost();
+	trip_total = tripCost.calcCost(); // Can use calCost() return value stored in 'trip_total' for logging details
 }
 
 // Enable booking of a flight and depatching flight info
