@@ -2,6 +2,7 @@
 #include "MainUI.h"
 #include "Planner.h"
 #include "EstimateCost.h"
+#include "Booking.h"
 
 
 int main()
@@ -49,6 +50,16 @@ void estimateTripCost() {
 	tripCost.calcCost();
 }
 
+// Enable booking of a flight and depatching flight info
+void bookFlight() {
+
+	int number;
+	Booking bkFlight;
+	number = bkFlight.generate_number();
+
+	std::cout << "Random number: " << number << std::endl;
+}
+
 // Utility UI display menu
 void displayMenu() {
 	std::cout << "Select an option from below:" << std::endl;
@@ -79,6 +90,7 @@ void menuSelection(char choice) {
 	case 'B':
 	case 'b':
 		std::cout << user_choice << ": You would like to purchase a ticket and book the flight." << std::endl;
+		bookFlight();
 		break;
 
 	case 'V':

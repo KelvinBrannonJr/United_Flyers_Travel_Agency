@@ -4,8 +4,21 @@
 	3: Finalized payment details
 */
 
+/*
+	Use random to generate:
+	flight number,
+	customer number,
+	gate id
+
+	Make multiple utility helper functions to randomly generate each:
+	- Two for loops, one increments characters
+		the other to increment integers, and splices both back together.
+*/
+
 #include "Booking.h"
 #include<iostream>
+#include<cstdlib>
+#include<time.h>
 
 // Booking Constructors
 Booking::Booking() {
@@ -54,6 +67,19 @@ std::string Booking::getAirportName() const {
 
 std::string Booking::getGateId() const {
 	return this->gate_id;
+}
+
+// Utility
+int Booking::generate_number() {
+	int random_num;
+
+	srand(time(0));
+
+	for (int i = 0; i < 10; ++i) {
+		random_num = 1000 + rand() % 9999;
+	}
+	
+	return random_num;
 }
 
 // Destructors

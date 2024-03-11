@@ -27,6 +27,9 @@ class Booking {
 		int getCustomerNumber() const;
 		std::string getAirportName() const;
 		std::string getGateId() const;
+
+		// Utility
+		int generate_number();
 		
 		// Destructor
 		~Booking();
