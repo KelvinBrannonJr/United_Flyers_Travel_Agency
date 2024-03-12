@@ -138,6 +138,7 @@
     <ClInclude Include="Booking.h" />
     <ClInclude Include="EstimateCost.h" />
     <ClInclude Include="FlightSeatClass.h" />
+    <ClInclude Include="AirlineNames.h" />
     <ClInclude Include="Planner.h" />
     <ClInclude Include="MainUI.h" />
   </ItemGroup>

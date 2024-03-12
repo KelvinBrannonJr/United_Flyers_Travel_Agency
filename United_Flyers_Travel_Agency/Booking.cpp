@@ -5,14 +5,9 @@
 */
 
 /*
-	Use random to generate:
-	flight number,
-	customer number,
-	gate id
-
-	Make multiple utility helper functions to randomly generate each:
-	- Two for loops, one increments characters
-		the other to increment integers, and splices both back together.
+	- Create ENUM for Airline Names, Randomly select an airline
+	- Create String for Gate ID, use combination of a CHAR and Number 
+		** Randomly index CHAR and Convert number to String [USE: std::to_String()
 */
 
 #include "Booking.h"
@@ -24,14 +19,14 @@
 Booking::Booking() {
 	this->flight_number = 0;
 	this->customer_number = 0;
-	this->airport_name = "None";
+	this->airline_name = "None";
 	this->gate_id = "None";
 }
 
-Booking::Booking(unsigned int c_flight_num, unsigned int c_customer_num, std::string c_airport_name, std::string c_gate_id) {
+Booking::Booking(unsigned int c_flight_num, unsigned int c_customer_num, std::string c_airline_name, std::string c_gate_id) {
 	this->flight_number = c_flight_num;
 	this->customer_number = c_customer_num;
-	this->airport_name = c_airport_name;
+	this->airline_name = c_airline_name;
 	this->gate_id = c_gate_id;
 }
 
@@ -44,8 +39,8 @@ void Booking::setCustomerNumber(unsigned int s_customer_num) {
 	this->customer_number = s_customer_num;
 }
 
-void Booking::setAirportName(std::string s_airport_name) {
-	this->airport_name = s_airport_name;
+void Booking::setAirlineName(std::string s_airline_name) {
+	this->airline_name = s_airline_name;
 }
 
 void Booking::setGateId(std::string s_gate_id) {
@@ -61,8 +56,8 @@ int Booking::getCustomerNumber() const {
 	return this->customer_number;
 }
 
-std::string Booking::getAirportName() const {
-	return this->airport_name;
+std::string Booking::getAirlineName() const {
+	return this->airline_name;
 }
 
 std::string Booking::getGateId() const {
@@ -91,7 +86,7 @@ int Booking::generate_customer_number() {
 void Booking::process_booking() {
 	int flight_num;
 	int customer_num;
-	std::string airport = "FIXME: AIRPORT";
+	std::string airline = "FIXME: AIRLINE";
 	std::string gateID = "FIXME: GATE ID";
 
 	std::cout << std::endl;
@@ -106,7 +101,7 @@ void Booking::process_booking() {
 	std::cout << "Customer number: " << customer_num << std::endl;
 
 	// Airport Name
-	std::cout << "Airport Name: " << airport << std::endl;
+	std::cout << "Airline Name: " << airline << std::endl;
 
 	// Gate ID
 	std::cout << "Gate ID: " << gateID << std::endl;
