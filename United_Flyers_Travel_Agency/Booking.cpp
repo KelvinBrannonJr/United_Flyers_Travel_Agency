@@ -70,16 +70,46 @@ std::string Booking::getGateId() const {
 }
 
 // Utility
-int Booking::generate_number() {
+int Booking::generate_flight_number() {
 	int random_num;
 
 	srand(time(0));
-
 	for (int i = 0; i < 10; ++i) {
 		random_num = 1000 + rand() % 9999;
-	}
-	
-	return random_num;
+	}	
+	return random_num * random_num;
+}
+
+int Booking::generate_customer_number() {
+	int random_num;
+
+	random_num = 1000 + rand() % 9999;
+	return random_num * random_num;
+}
+
+// Booking processor
+void Booking::process_booking() {
+	int flight_num;
+	int customer_num;
+	std::string airport = "FIXME: AIRPORT";
+	std::string gateID = "FIXME: GATE ID";
+
+	std::cout << std::endl;
+	std::cout << "Processing booking information..." << std::endl;
+
+	// Flight number
+	flight_num = this->generate_flight_number();
+	std::cout << "Flight number: " << flight_num << std::endl;
+
+	// Customer number
+	customer_num = this->generate_customer_number();
+	std::cout << "Customer number: " << customer_num << std::endl;
+
+	// Airport Name
+	std::cout << "Airport Name: " << airport << std::endl;
+
+	// Gate ID
+	std::cout << "Gate ID: " << gateID << std::endl;
 }
 
 // Destructors

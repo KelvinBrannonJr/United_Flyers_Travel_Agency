@@ -29,7 +29,9 @@ class Booking {
 		std::string getGateId() const;
 
 		// Utility
-		int generate_number();
+		int generate_flight_number();
+		int generate_customer_number();
+		void process_booking();
 		
 		// Destructor
 		~Booking();

@@ -49,16 +49,14 @@ void estimateTripCost() {
 
 	Estimate tripCost;
 	trip_total = tripCost.calcCost(); // Can use calCost() return value stored in 'trip_total' for logging details
+
+	// Possibly change estimateTripCost() to return int from calcCost() for outside use.
 }
 
 // Enable booking of a flight and depatching flight info
 void bookFlight() {
-
-	int number;
 	Booking bkFlight;
-	number = bkFlight.generate_number();
-
-	std::cout << "Random number: " << number << std::endl;
+	bkFlight.process_booking();
 }
 
 // Utility UI display menu
