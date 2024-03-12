@@ -4,26 +4,29 @@
 	3: Finalized payment details
 */
 
-/*
-	- Create ENUM for Airline Names, Randomly select an airline
+/*	
 	- Create String for Gate ID, use combination of a CHAR and Number 
 		** Randomly index CHAR and Convert number to String [USE: std::to_String()
+	
+	- Finish airlineEnumToString()
 */
+
 
 #include "Booking.h"
 #include<iostream>
 #include<cstdlib>
 #include<time.h>
+#include<map>
 
 // Booking Constructors
 Booking::Booking() {
 	this->flight_number = 0;
 	this->customer_number = 0;
-	this->airline_name = "None";
+	this->airline_name = AMERICAN;
 	this->gate_id = "None";
 }
 
-Booking::Booking(unsigned int c_flight_num, unsigned int c_customer_num, std::string c_airline_name, std::string c_gate_id) {
+Booking::Booking(unsigned int c_flight_num, unsigned int c_customer_num, Airlines c_airline_name, std::string c_gate_id) {
 	this->flight_number = c_flight_num;
 	this->customer_number = c_customer_num;
 	this->airline_name = c_airline_name;
@@ -39,7 +42,7 @@ void Booking::setCustomerNumber(unsigned int s_customer_num) {
 	this->customer_number = s_customer_num;
 }
 
-void Booking::setAirlineName(std::string s_airline_name) {
+void Booking::setAirlineName(Airlines s_airline_name) {
 	this->airline_name = s_airline_name;
 }
 
@@ -56,7 +59,7 @@ int Booking::getCustomerNumber() const {
 	return this->customer_number;
 }
 
-std::string Booking::getAirlineName() const {
+Airlines Booking::getAirlineName() const {
 	return this->airline_name;
 }
 
@@ -65,42 +68,70 @@ std::string Booking::getGateId() const {
 }
 
 // Utility
-int Booking::generate_flight_number() {
+int Booking::generateFlightNumber() {
 	int random_num;
 
-	srand(time(0));
+	srand(unsigned(time(0)));
 	for (int i = 0; i < 10; ++i) {
 		random_num = 1000 + rand() % 9999;
 	}	
 	return random_num * random_num;
 }
 
-int Booking::generate_customer_number() {
+int Booking::generateCustomerNumber() {
 	int random_num;
 
 	random_num = 1000 + rand() % 9999;
 	return random_num * random_num;
 }
 
+Airlines Booking::generateAirline() {
+	Airlines e_airline;
+
+	e_airline = static_cast<Airlines>(rand() % JETBLUE);
+	return e_airline;
+}
+
+// Airline enum to string converter
+std::string Booking::airlineEnumToString(Airlines e_al) {
+
+	// FEATURE: Finish extracting string from enum
+
+	// Enum map to Strings
+	std::map<Airlines, std::string> AirlineEnumToString = {
+		{ AMERICAN, "American Airlines" },
+		{ DELTA, "Delta Airlines"},
+		{ SOUTHWEST, "Southwest Airlines"},
+		{ FRONTIER, "Frontier Airlines"},
+		{ SPIRIT, "Spirit Airlines"},
+		{ UNITED, "United Airlines"},
+		{ JETBLUE, "Jetblue Airlines"}
+	};
+
+	return "FIXME";
+}
+
 // Booking processor
-void Booking::process_booking() {
+void Booking::processBooking() {
 	int flight_num;
 	int customer_num;
-	std::string airline = "FIXME: AIRLINE";
+	Airlines airline;
+
 	std::string gateID = "FIXME: GATE ID";
 
 	std::cout << std::endl;
 	std::cout << "Processing booking information..." << std::endl;
 
 	// Flight number
-	flight_num = this->generate_flight_number();
+	flight_num = this->generateFlightNumber();
 	std::cout << "Flight number: " << flight_num << std::endl;
 
 	// Customer number
-	customer_num = this->generate_customer_number();
+	customer_num = this->generateCustomerNumber();
 	std::cout << "Customer number: " << customer_num << std::endl;
 
 	// Airport Name
+	airline = this->generateAirline();
 	std::cout << "Airline Name: " << airline << std::endl;
 
 	// Gate ID

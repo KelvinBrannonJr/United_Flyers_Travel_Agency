@@ -56,7 +56,7 @@ void estimateTripCost() {
 // Enable booking of a flight and depatching flight info
 void bookFlight() {
 	Booking bkFlight;
-	bkFlight.process_booking();
+	bkFlight.processBooking();
 }
 
 // Utility UI display menu
