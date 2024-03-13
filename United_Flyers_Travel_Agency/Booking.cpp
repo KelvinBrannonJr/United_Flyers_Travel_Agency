@@ -7,8 +7,6 @@
 /*	
 	- Create String for Gate ID, use combination of a CHAR and Number 
 		** Randomly index CHAR and Convert number to String [USE: std::to_String()
-	
-	- Finish airlineEnumToString()
 */
 
 
@@ -95,10 +93,8 @@ Airlines Booking::generateAirline() {
 // Airline enum to string converter
 std::string Booking::airlineEnumToString(Airlines e_al) {
 
-	// FEATURE: Finish extracting string from enum
-
 	// Enum map to Strings
-	std::map<Airlines, std::string> AirlineEnumToString = {
+	std::map<Airlines, std::string> mp_airline = {
 		{ AMERICAN, "American Airlines" },
 		{ DELTA, "Delta Airlines"},
 		{ SOUTHWEST, "Southwest Airlines"},
@@ -107,8 +103,7 @@ std::string Booking::airlineEnumToString(Airlines e_al) {
 		{ UNITED, "United Airlines"},
 		{ JETBLUE, "Jetblue Airlines"}
 	};
-
-	return "FIXME";
+	return mp_airline.at(e_al);
 }
 
 // Booking processor
@@ -132,7 +127,7 @@ void Booking::processBooking() {
 
 	// Airport Name
 	airline = this->generateAirline();
-	std::cout << "Airline Name: " << airline << std::endl;
+	std::cout << "Airline Name: " << this->airlineEnumToString(airline) << std::endl;
 
 	// Gate ID
 	std::cout << "Gate ID: " << gateID << std::endl;
