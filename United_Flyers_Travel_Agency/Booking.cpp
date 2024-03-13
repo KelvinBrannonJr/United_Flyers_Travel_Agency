@@ -4,12 +4,6 @@
 	3: Finalized payment details
 */
 
-/*	
-	- Create String for Gate ID, use combination of a CHAR and Number 
-		** Randomly index CHAR and Convert number to String [USE: std::to_String()
-*/
-
-
 #include "Booking.h"
 #include<iostream>
 #include<cstdlib>
@@ -150,6 +144,13 @@ void Booking::processBooking() {
 	// Gate ID
 	gateID = this->generateGateId();
 	std::cout << "Gate ID: " << gateID << std::endl;
+}
+
+// Confimation Message
+void Booking::confirmationBookingMsg() {
+	std::cout << std::endl;
+	std::cout << "Booking Process Complete!!" << std::endl;
+	std::cout << "Thank you, Please enjoy your trip!" << std::endl;
 }
 
 // Destructors
