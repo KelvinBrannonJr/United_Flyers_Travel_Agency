@@ -34,6 +34,7 @@ class Booking {
 		int generateCustomerNumber();
 		Airlines generateAirline();
 		std::string airlineEnumToString(Airlines e_al);
+		std::string generateGateId();
 		void processBooking();
 		
 		// Destructor

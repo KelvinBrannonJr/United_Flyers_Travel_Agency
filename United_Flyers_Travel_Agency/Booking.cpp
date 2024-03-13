@@ -106,13 +106,31 @@ std::string Booking::airlineEnumToString(Airlines e_al) {
 	return mp_airline.at(e_al);
 }
 
+std::string Booking::generateGateId() {
+	char letter;
+	int randm;
+	int randm2;
+	std::string num_to_string;
+	std::string cipher;
+	const int LIMIT = 25;
+
+	for (int i = 0; i < LIMIT; ++i) {
+		randm = rand() % 26;
+		letter = 'A' + randm;
+	}
+	randm2 = rand() % 10;
+	num_to_string = std::to_string(randm2);
+
+	cipher = letter + num_to_string;
+	return cipher;
+}
+
 // Booking processor
 void Booking::processBooking() {
 	int flight_num;
 	int customer_num;
 	Airlines airline;
-
-	std::string gateID = "FIXME: GATE ID";
+	std::string gateID;
 
 	std::cout << std::endl;
 	std::cout << "Processing booking information..." << std::endl;
@@ -130,6 +148,7 @@ void Booking::processBooking() {
 	std::cout << "Airline Name: " << this->airlineEnumToString(airline) << std::endl;
 
 	// Gate ID
+	gateID = this->generateGateId();
 	std::cout << "Gate ID: " << gateID << std::endl;
 }
 
