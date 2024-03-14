@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Booking.cpp" />
     <ClCompile Include="EstimateCost.cpp" />
+    <ClCompile Include="Payment.cpp" />
     <ClCompile Include="Planner.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -139,6 +140,7 @@
     <ClInclude Include="EstimateCost.h" />
     <ClInclude Include="FlightSeatClass.h" />
     <ClInclude Include="AirlineNames.h" />
+    <ClInclude Include="Payment.h" />
     <ClInclude Include="Planner.h" />
     <ClInclude Include="MainUI.h" />
   </ItemGroup>
