@@ -32,4 +32,23 @@ void Payment::setCCVNumber(unsigned int s_ccv_num) {
 	this->ccv_number = s_ccv_num;
 }
 
+// Payment Getters
+int Payment::getCardNumber() const {
+	return this->card_number;
+}
+
+int Payment::getExpirationMonth() const {
+	return this->expiration_month;
+}
+
+int Payment::getExpirationYear() const {
+	return this->expiration_year;
+}
+
+int Payment::getCcvNumber() const {
+	return this->ccv_number;
+}
+
+
+
 
