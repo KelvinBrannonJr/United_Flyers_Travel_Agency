@@ -1,4 +1,5 @@
 #include "Payment.h"
+#include<iostream>
 
 // Payment Constructors
 Payment::Payment() {
@@ -49,6 +50,10 @@ int Payment::getCcvNumber() const {
 	return this->ccv_number;
 }
 
+// Payment Destructor
+Payment::~Payment() {
+	std::cout << "Payment object destroyed" << std::endl;
+}
 
 
 
