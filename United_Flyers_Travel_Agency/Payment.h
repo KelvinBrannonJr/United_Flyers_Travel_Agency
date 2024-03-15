@@ -30,6 +30,9 @@ class Payment{
 		int getExpirationYear() const;
 		int getCcvNumber() const;
 
+		// Utility
+		void processPayment();
+
 		// Payment Destructor
 		~Payment();
 
