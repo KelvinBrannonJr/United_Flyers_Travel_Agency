@@ -14,3 +14,22 @@ Payment::Payment(unsigned int c_card_num, unsigned int c_exp_month, unsigned int
 	this->expiration_year = c_card_year;
 	this->ccv_number = c_ccv_num;
 }
+
+// Payment Setters
+void Payment::setCardNumber(unsigned int s_card_num) {
+	this->card_number = s_card_num;
+}
+
+void Payment::setExpirationMonth(unsigned int s_card_month) {
+	this->expiration_month = s_card_month;
+}
+
+void Payment::setExpirationYear(unsigned int s_card_year) {
+	this->expiration_year = s_card_year;
+}
+
+void Payment::setCCVNumber(unsigned int s_ccv_num) {
+	this->ccv_number = s_ccv_num;
+}
+
+
