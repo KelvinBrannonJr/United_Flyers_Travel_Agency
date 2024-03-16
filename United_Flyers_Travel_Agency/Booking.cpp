@@ -4,6 +4,7 @@
 */
 
 #include "Booking.h"
+#include "Payment.h"
 #include<iostream>
 #include<cstdlib>
 #include<time.h>
@@ -143,7 +144,41 @@ void Booking::processBooking() {
 	// Gate ID
 	gateID = this->generateGateId();
 	std::cout << "Gate ID: " << gateID << std::endl;
+
+	// Purchase
+	this->confirmBookingPurchase();
+
 }
+// Confirm Purchase Booking
+void Booking::confirmBookingPurchase() {
+	char choice;
+	std::cout << "Would you like to purchase this booking? Y/N";
+	std::cin >> choice;
+
+	switch (choice) {
+		{
+			case 'Y':
+			case 'y':
+				Payment cardPay;
+				cardPay.processPayment();
+				std::cout << std::endl;
+				this->confirmationBookingMsg();
+				break;
+		}
+
+		{
+			case 'N':
+			case 'n':
+				break;
+		}
+
+		{
+			default:
+				std::cout << "Sorry that was an invalid input, Enter Y/N" << std::endl;
+		}
+	}
+}
+
 
 // Confimation Message
 void Booking::confirmationBookingMsg() {

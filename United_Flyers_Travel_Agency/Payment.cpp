@@ -2,7 +2,7 @@
 #include<iostream>
 
 /*
-	Implement Payment summary Utility method to display all data, [use Getter methods to Output]
+	Test all Payment Methods
 */
 
 
@@ -85,7 +85,11 @@ void Payment::processPayment() {
 	std::cin >> l_ccv;
 	this->setExpirationMonth(l_ccv);
 
-	// Implement Payment summary Utility method to display all data
+	// Simulate live payment process
+	this->paymentAnimation();
+
+	// Display payment information
+	this->displayPaymentInformation();
 
 }
 
