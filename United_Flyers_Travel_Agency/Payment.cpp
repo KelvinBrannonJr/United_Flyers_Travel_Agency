@@ -98,6 +98,17 @@ void Payment::displayPaymentInformation() {
 	std::cout << "Card CCV Number: " << this->getCcvNumber() << std::endl;
 }
 
+void Payment::paymentAnimation() {
+	const int PERIOD_NUM = 4;
+	char period = '.';
+
+	for (int i = 0; i < PERIOD_NUM; ++i) {
+		std::cout << period;
+		_sleep(1);
+	}
+	std::cout << std::endl;
+}
+
 // Payment Destructor
 Payment::~Payment() {
 	std::cout << "Payment object destroyed" << std::endl;

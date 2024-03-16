@@ -33,6 +33,7 @@ class Payment{
 		// Utility
 		void processPayment();
 		void displayPaymentInformation();
+		void paymentAnimation();
 
 		// Payment Destructor
 		~Payment();
