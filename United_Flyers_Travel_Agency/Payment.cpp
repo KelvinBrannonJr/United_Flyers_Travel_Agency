@@ -1,6 +1,11 @@
 #include "Payment.h"
 #include<iostream>
 
+/*
+	Implement Payment summary Utility method to display all data, [use Getter methods to Output]
+*/
+
+
 // Payment Constructors
 Payment::Payment() {
 	this->card_number = 0000000000000000;
@@ -82,9 +87,15 @@ void Payment::processPayment() {
 
 	// Implement Payment summary Utility method to display all data
 
+}
 
-
-	
+void Payment::displayPaymentInformation() {
+	std::cout << std::endl;
+	std::cout << "Payment Details:" << std::endl;
+	std::cout << "Card Number: " << this->getCardNumber() << std::endl;
+	std::cout << "Card Expiration Month: " << this->getExpirationMonth() << std::endl;
+	std::cout << "Card Expiration Year: " << this->getExpirationYear() << std::endl;
+	std::cout << "Card CCV Number: " << this->getCcvNumber() << std::endl;
 }
 
 // Payment Destructor
