@@ -1,17 +1,19 @@
 #pragma once
+#include<string>
+
 
 class Payment{
 	private:
 		// Payment Private Members
-		unsigned long card_number;
-		unsigned int expiration_month;
-		unsigned int expiration_year;
-		unsigned int ccv_number;
+		std::string card_number;
+		std::string expiration_month;
+		std::string expiration_year;
+		std::string ccv_number;
 
 	public:
 		// Constructors
 		Payment();
-		Payment(unsigned long c_card_num, unsigned int c_exp_month, unsigned int c_card_year, unsigned int c_ccv_num);
+		Payment(std::string c_card_num, std::string c_exp_month, std::string c_card_year, std::string c_ccv_num);
 
 		// Constants
 		const int CARD_NUM_LENGTH = 16;
@@ -19,16 +21,16 @@ class Payment{
 		const int CCV_NUM_LENGTH = 3;
 
 		// Payment Setters
-		void setCardNumber(unsigned long s_card_num);
-		void setExpirationMonth(unsigned int s_card_month);
-		void setExpirationYear(unsigned int s_card_year);
-		void setCCVNumber(unsigned int s_ccv_num);
+		void setCardNumber(std::string s_card_num);
+		void setExpirationMonth(std::string s_card_month);
+		void setExpirationYear(std::string s_card_year);
+		void setCCVNumber(std::string s_ccv_num);
 
 		// Payment Getters
-		int getCardNumber() const;
-		int getExpirationMonth() const;
-		int getExpirationYear() const;
-		int getCcvNumber() const;
+		std::string getCardNumber() const;
+		std::string getExpirationMonth() const;
+		std::string getExpirationYear() const;
+		std::string getCcvNumber() const;
 
 		// Utility
 		void processPayment();

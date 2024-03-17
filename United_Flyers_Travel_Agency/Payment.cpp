@@ -9,13 +9,13 @@
 
 // Payment Constructors
 Payment::Payment() {
-	this->card_number = 0;
-	this->expiration_month = 0;
-	this->expiration_year = 0;
-	this->ccv_number = 0;
+	this->card_number = "None";
+	this->expiration_month = "None";
+	this->expiration_year = "None";
+	this->ccv_number = "None";
 }
 
-Payment::Payment(unsigned long c_card_num, unsigned int c_exp_month, unsigned int c_card_year, unsigned int c_ccv_num) {
+Payment::Payment(std::string c_card_num, std::string c_exp_month, std::string c_card_year, std::string c_ccv_num) {
 	this->card_number = c_card_num;
 	this->expiration_month = c_exp_month;
 	this->expiration_year = c_card_year;
@@ -23,45 +23,45 @@ Payment::Payment(unsigned long c_card_num, unsigned int c_exp_month, unsigned in
 }
 
 // Payment Setters
-void Payment::setCardNumber(unsigned long s_card_num) {
+void Payment::setCardNumber(std::string s_card_num) {
 	this->card_number = s_card_num;
 }
 
-void Payment::setExpirationMonth(unsigned int s_card_month) {
+void Payment::setExpirationMonth(std::string s_card_month) {
 	this->expiration_month = s_card_month;
 }
 
-void Payment::setExpirationYear(unsigned int s_card_year) {
+void Payment::setExpirationYear(std::string s_card_year) {
 	this->expiration_year = s_card_year;
 }
 
-void Payment::setCCVNumber(unsigned int s_ccv_num) {
+void Payment::setCCVNumber(std::string s_ccv_num) {
 	this->ccv_number = s_ccv_num;
 }
 
 // Payment Getters
-int Payment::getCardNumber() const {
+std::string Payment::getCardNumber() const {
 	return this->card_number;
 }
 
-int Payment::getExpirationMonth() const {
+std::string Payment::getExpirationMonth() const {
 	return this->expiration_month;
 }
 
-int Payment::getExpirationYear() const {
+std::string Payment::getExpirationYear() const {
 	return this->expiration_year;
 }
 
-int Payment::getCcvNumber() const {
+std::string Payment::getCcvNumber() const {
 	return this->ccv_number;
 }
 
 // Utility
 void Payment::processPayment() {
-	unsigned long l_card_num;
-	unsigned int l_card_mth;
-	unsigned int l_card_yr;
-	unsigned int l_ccv;
+	std::string l_card_num;
+	std::string l_card_mth;
+	std::string l_card_yr;
+	std::string l_ccv;
 
 	std::cout << std::endl;
 	std::cout << "Ok you would like to purchase the Booking, let's get your payment information." << std::endl;
