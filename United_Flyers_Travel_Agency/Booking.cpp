@@ -1,6 +1,5 @@
 /*
-	1: Provide payment gateway, possibly from an external helper class.
-	2: Finalized payment details
+	Test Booking purchase and linking to Payment.h processPayment();
 */
 
 #include "Booking.h"
@@ -151,40 +150,32 @@ void Booking::processBooking() {
 }
 // Confirm Purchase Booking
 void Booking::confirmBookingPurchase() {
-	char choice;
-	std::cout << "Would you like to purchase this booking? Y/N";
-	std::cin >> choice;
+	char confirm_choice;
+	std::cout << "Would you like to purchase this booking? Y/N" << std::endl;
+	std::cin >> confirm_choice;
 
-	switch (choice) {
+	switch (confirm_choice) {
 		{
 			case 'Y':
 			case 'y':
-				Payment cardPay;
-				cardPay.processPayment();
-				std::cout << std::endl;
-				this->confirmationBookingMsg();
+				Payment pay; 
+				pay.processPayment();
 				break;
 		}
 
 		{
 			case 'N':
 			case 'n':
+				std::cout << "Ok, going back" << std::endl;
 				break;
 		}
 
 		{
 			default:
 				std::cout << "Sorry that was an invalid input, Enter Y/N" << std::endl;
+				break;
 		}
 	}
-}
-
-
-// Confimation Message
-void Booking::confirmationBookingMsg() {
-	std::cout << std::endl;
-	std::cout << "Booking Process Complete!!" << std::endl;
-	std::cout << "Thank you, Please enjoy your trip!" << std::endl;
 }
 
 // Destructors

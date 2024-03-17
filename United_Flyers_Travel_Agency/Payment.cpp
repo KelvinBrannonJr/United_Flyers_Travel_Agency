@@ -1,5 +1,6 @@
 #include "Payment.h"
 #include<iostream>
+#include<windows.h>
 
 /*
 	Test all Payment Methods
@@ -8,13 +9,13 @@
 
 // Payment Constructors
 Payment::Payment() {
-	this->card_number = 0000000000000000;
-	this->expiration_month = 01;
-	this->expiration_year = 23;
-	this->ccv_number = 000;
+	this->card_number = 0;
+	this->expiration_month = 0;
+	this->expiration_year = 0;
+	this->ccv_number = 0;
 }
 
-Payment::Payment(unsigned int c_card_num, unsigned int c_exp_month, unsigned int c_card_year, unsigned int c_ccv_num) {
+Payment::Payment(unsigned long c_card_num, unsigned int c_exp_month, unsigned int c_card_year, unsigned int c_ccv_num) {
 	this->card_number = c_card_num;
 	this->expiration_month = c_exp_month;
 	this->expiration_year = c_card_year;
@@ -22,7 +23,7 @@ Payment::Payment(unsigned int c_card_num, unsigned int c_exp_month, unsigned int
 }
 
 // Payment Setters
-void Payment::setCardNumber(unsigned int s_card_num) {
+void Payment::setCardNumber(unsigned long s_card_num) {
 	this->card_number = s_card_num;
 }
 
@@ -57,7 +58,7 @@ int Payment::getCcvNumber() const {
 
 // Utility
 void Payment::processPayment() {
-	unsigned int l_card_num;
+	unsigned long l_card_num;
 	unsigned int l_card_mth;
 	unsigned int l_card_yr;
 	unsigned int l_ccv;
@@ -67,26 +68,33 @@ void Payment::processPayment() {
 
 	// Card Number
 	std::cout << "Please enter ANY 16 digit card number, Ex: 1234567812345678 " << std::endl;
+	std::cin.clear();
 	std::cin >> l_card_num;
 	this->setCardNumber(l_card_num);
 
 	// Card Month
 	std::cout << "Please enter ANY 2-digit card expiration month, Ex: 01 " << std::endl;
+	std::cin.clear();
 	std::cin >> l_card_mth;
 	this->setExpirationMonth(l_card_mth);
 
 	// Card Year
 	std::cout << "Please enter ANY 2-digit card expiration year, Ex: 23 " << std::endl;
+	std::cin.clear();
 	std::cin >> l_card_yr;
-	this->setExpirationMonth(l_card_yr);
+	this->setExpirationYear(l_card_yr);
 
 	// Card CCV
 	std::cout << "Please enter ANY 3-digit card CCV Code, Ex: 123 " << std::endl;
+	std::cin.clear();
 	std::cin >> l_ccv;
-	this->setExpirationMonth(l_ccv);
+	this->setCCVNumber(l_ccv);
 
 	// Simulate live payment process
 	this->paymentAnimation();
+
+	// Message Success of Payment transaction
+	this->confirmationPaymentSuccessMsg();
 
 	// Display payment information
 	this->displayPaymentInformation();
@@ -102,13 +110,20 @@ void Payment::displayPaymentInformation() {
 	std::cout << "Card CCV Number: " << this->getCcvNumber() << std::endl;
 }
 
+// Confimation Message
+void Payment::confirmationPaymentSuccessMsg() {
+	std::cout << std::endl;
+	std::cout << "Payment Process Complete!!" << std::endl;
+	std::cout << "Thank you, Please enjoy your trip!" << std::endl;
+}
+
 void Payment::paymentAnimation() {
-	const int PERIOD_NUM = 4;
+	const int PERIOD_NUM = 5;
 	char period = '.';
 
 	for (int i = 0; i < PERIOD_NUM; ++i) {
 		std::cout << period;
-		_sleep(1);
+		Sleep(1000);
 	}
 	std::cout << std::endl;
 }

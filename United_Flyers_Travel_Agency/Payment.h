@@ -3,7 +3,7 @@
 class Payment{
 	private:
 		// Payment Private Members
-		unsigned int card_number;
+		unsigned long card_number;
 		unsigned int expiration_month;
 		unsigned int expiration_year;
 		unsigned int ccv_number;
@@ -11,7 +11,7 @@ class Payment{
 	public:
 		// Constructors
 		Payment();
-		Payment(unsigned int c_card_num, unsigned int c_exp_month, unsigned int c_card_year, unsigned int c_ccv_num);
+		Payment(unsigned long c_card_num, unsigned int c_exp_month, unsigned int c_card_year, unsigned int c_ccv_num);
 
 		// Constants
 		const int CARD_NUM_LENGTH = 16;
@@ -19,7 +19,7 @@ class Payment{
 		const int CCV_NUM_LENGTH = 3;
 
 		// Payment Setters
-		void setCardNumber(unsigned int s_card_num);
+		void setCardNumber(unsigned long s_card_num);
 		void setExpirationMonth(unsigned int s_card_month);
 		void setExpirationYear(unsigned int s_card_year);
 		void setCCVNumber(unsigned int s_ccv_num);
@@ -32,6 +32,7 @@ class Payment{
 
 		// Utility
 		void processPayment();
+		void confirmationPaymentSuccessMsg();
 		void displayPaymentInformation();
 		void paymentAnimation();
 

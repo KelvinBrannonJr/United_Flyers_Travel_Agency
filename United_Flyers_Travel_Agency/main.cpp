@@ -57,7 +57,6 @@ void estimateTripCost() {
 void bookFlight() {
 	Booking bkFlight;
 	bkFlight.processBooking();
-	bkFlight.confirmationBookingMsg();
 }
 
 // Utility UI display menu

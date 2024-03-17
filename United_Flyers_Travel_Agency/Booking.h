@@ -37,7 +37,6 @@ class Booking {
 		std::string generateGateId();
 		void processBooking();
 		void confirmBookingPurchase();
-		void confirmationBookingMsg();
 		
 		// Destructor
 		~Booking();
