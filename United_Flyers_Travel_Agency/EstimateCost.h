@@ -41,7 +41,7 @@ class Estimate {
 		std::string convertHours(unsigned int hrs);
 		int calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier);
 		int calcLuggageTotal(unsigned int num_luggage);
-		int calcCost();
+		void calcCost();
 		SeatingClass strToEnumSeat(std::string str_tier);
 
 

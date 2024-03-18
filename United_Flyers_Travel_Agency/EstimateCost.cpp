@@ -134,10 +134,8 @@ SeatingClass Estimate::strToEnumSeat(std::string str_tier) {
 	}
 }
 
-/*
-	Create final total cost function to total all costs from calcCost selections
-*/
-int Estimate::calcCost() {
+
+void Estimate::calcCost() {
 	std::string convert_time;
 	int final_seat_total;
 	int final_luggage_total;
@@ -175,7 +173,6 @@ int Estimate::calcCost() {
 	std::cout << "You've selected " << str_s_tier  << " seating class," << std::endl;
 	std::cout << "You have " << l_num_luggage << " luggage to bring on." << std::endl;
 	std::cout << "Your total cost for the selected flight options: " << "$" << final_seat_total + final_luggage_total << std::endl;
-	return final_seat_total + final_luggage_total;
 }
 
 Estimate::~Estimate() {
