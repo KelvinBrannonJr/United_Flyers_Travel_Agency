@@ -142,7 +142,7 @@ void Estimate::calcCost() {
 
 	// Day converter
 	unsigned int hour;
-	std::cout << "What time of day would you like to depart? (1 - 24): " << std::endl;
+	std::cout << "What time of day would you like to depart? Ex: 1 - 24 " << std::endl;
 	std::cin >> hour;
 
 	convert_time = convertHours(hour);
@@ -150,7 +150,7 @@ void Estimate::calcCost() {
 
 	// Seat Reserver
 	unsigned int seats;
-	std::cout << "How many seats would you like to reserve?" << std::endl;
+	std::cout << "How many seats would you like to reserve? Ex: 2" << std::endl;
 	std::cin >> seats;
 
 	SeatingClass s_tier;

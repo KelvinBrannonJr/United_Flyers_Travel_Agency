@@ -29,6 +29,7 @@ class Planner {
 
 		// Planner Utility
 		void printTrip();
+		void enterTripDetails();
 
 		// Planner Destructor
 		~Planner();

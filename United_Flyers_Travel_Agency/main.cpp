@@ -23,35 +23,15 @@ int main()
 
 // Feature function for planning a trip
 void planTrip() {
-	std::string leaving_city;
-	std::string leaving_state;
-	std::string arriving_city;
-	std::string arriving_state;
-
-	std::cout << "What city are you flying from?: " << std::endl;
-	std::cin >> leaving_city;	
-	
-	std::cout << "Ok, in what state are you leaving from?: " << std::endl;
-	std::cin >> leaving_state;
-
-	std::cout << "What is the city of your destination?: " << std::endl;
-	std::cin >> arriving_city;
-
-	std::cout << "Ok, what is the state of your destination?: " << std::endl;
-	std::cin >> arriving_state;
-	
-	Planner plan(leaving_city,leaving_state,arriving_city,arriving_state);
+	Planner plan;
+	plan.enterTripDetails();
 	plan.printTrip();
 }
 
 // Enter customer flight options and estimate cost
 void estimateTripCost() {
-	int trip_total;
-
 	Estimate tripCost;
-	trip_total = tripCost.calcCost(); // Can use calCost() return value stored in 'trip_total' for logging details
-
-	// Possibly change estimateTripCost() to return int from calcCost() for outside use.
+	tripCost.calcCost();
 }
 
 // Enable booking of a flight and depatching flight info
