@@ -2,10 +2,6 @@
 #include<iostream>
 #include<windows.h>
 
-/*
-	Test all Payment Methods
-*/
-
 
 // Payment Constructors
 Payment::Payment() {
@@ -89,16 +85,6 @@ void Payment::processPayment() {
 	std::cin.clear();
 	std::cin >> l_ccv;
 	this->setCCVNumber(l_ccv);
-
-	// Simulate live payment process
-	this->paymentAnimation();
-
-	// Message Success of Payment transaction
-	this->confirmationPaymentSuccessMsg();
-
-	// Display payment information
-	this->displayPaymentInformation();
-
 }
 
 void Payment::displayPaymentInformation() {

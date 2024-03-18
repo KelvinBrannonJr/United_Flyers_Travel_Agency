@@ -1,6 +1,7 @@
 #pragma once
 #include "FlightSeatClass.h"
 
+
 class Estimate {
 
 	private:

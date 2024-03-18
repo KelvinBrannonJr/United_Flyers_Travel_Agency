@@ -3,6 +3,7 @@
 #include "Planner.h"
 #include "EstimateCost.h"
 #include "Booking.h"
+#include "Payment.h"
 
 
 int main()
@@ -57,6 +58,12 @@ void estimateTripCost() {
 void bookFlight() {
 	Booking bkFlight;
 	bkFlight.processBooking();
+	bkFlight.confirmBookingPurchase();
+}
+
+void viewConfirmDetails() {
+	Payment pay;
+	pay.displayPaymentInformation();
 }
 
 // Utility UI display menu
@@ -65,7 +72,6 @@ void displayMenu() {
 	std::cout << "P: Plan a Trip" << std::endl;
 	std::cout << "E: Estimate Cost" << std::endl;
 	std::cout << "B: Purchase and Book Flight" << std::endl;
-	std::cout << "V: View Confirmation details" << std::endl;
 	std::cout << "Q: Quit" << std::endl;
 	std::cout << std::endl;
 
@@ -90,11 +96,6 @@ void menuSelection(char choice) {
 	case 'b':
 		std::cout << user_choice << ": You would like to purchase a ticket and book the flight." << std::endl;
 		bookFlight();
-		break;
-
-	case 'V':
-	case 'v':
-		std::cout << user_choice << ": View your confirmation details." << std::endl;
 		break;
 
 	case 'Q':

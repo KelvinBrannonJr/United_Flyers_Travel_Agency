@@ -3,7 +3,10 @@
 
 // Planner Constructor
 Planner::Planner() {
-
+	this->coming_from_city = "None";
+	this->coming_from_state = "None";
+	this->going_to_city = "None";
+	this->going_to_state = "None";
 }
 
 Planner::Planner(std::string cf_city, std::string cf_state, std::string gt_city, std::string gt_state) {

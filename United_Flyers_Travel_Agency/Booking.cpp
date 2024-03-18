@@ -1,13 +1,10 @@
-/*
-	Test Booking purchase and linking to Payment.h processPayment();
-*/
-
 #include "Booking.h"
 #include "Payment.h"
 #include<iostream>
 #include<cstdlib>
 #include<time.h>
 #include<map>
+
 
 // Booking Constructors
 Booking::Booking() {
@@ -143,11 +140,8 @@ void Booking::processBooking() {
 	// Gate ID
 	gateID = this->generateGateId();
 	std::cout << "Gate ID: " << gateID << std::endl;
-
-	// Purchase
-	this->confirmBookingPurchase();
-
 }
+
 // Confirm Purchase Booking
 void Booking::confirmBookingPurchase() {
 	char confirm_choice;
@@ -160,6 +154,9 @@ void Booking::confirmBookingPurchase() {
 			case 'y':
 				Payment pay; 
 				pay.processPayment();
+				pay.paymentAnimation();
+				pay.confirmationPaymentSuccessMsg();
+				pay.displayPaymentInformation();
 				break;
 		}
 
