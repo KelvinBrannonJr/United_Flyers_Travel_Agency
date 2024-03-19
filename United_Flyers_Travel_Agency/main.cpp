@@ -10,7 +10,7 @@ int main()
 {	
 	// FEATURE: implement <iomanip> for formatting
 	std::cout << "Welcome to United Flyers" << std::endl;
-	std::cout << "" << std::endl;
+	std::cout << std::endl;
 
 	try {
 		isRunning = true;
@@ -55,9 +55,9 @@ void viewConfirmDetails() {
 // Utility UI display menu
 void displayMenu() {
 	std::cout << "Select an option from below:" << std::endl;
-	std::cout << "P: Plan a Trip" << std::endl;
-	std::cout << "E: Estimate Cost" << std::endl;
-	std::cout << "B: Purchase and Book Flight" << std::endl;
+	std::cout << "1: Plan a Trip" << std::endl;
+	std::cout << "2: Estimate Cost" << std::endl;
+	std::cout << "3: Purchase and Book Flight" << std::endl;
 	std::cout << "Q: Quit" << std::endl;
 	std::cout << std::endl;
 
@@ -66,20 +66,17 @@ void displayMenu() {
 // Utility function to handle the user menu selection
 void menuSelection(char choice) {
 	switch (user_choice) {
-	case 'P':
-	case 'p':
+	case '1':
 		std::cout << user_choice << ": Nice, you would like to plan a trip!" << std::endl;
 		planTrip();
 		break;
 
-	case 'E':
-	case 'e':
+	case '2':
 		std::cout << user_choice << ": You would like a price estimate of a for a trip." << std::endl;
 		estimateTripCost();
 		break;
 
-	case 'B':
-	case 'b':
+	case '3':
 		std::cout << user_choice << ": You would like to purchase a ticket and book the flight." << std::endl;
 		bookFlight();
 		break;

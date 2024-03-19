@@ -56,11 +56,13 @@ void Planner::printTrip() {
 	std::cout << std::endl;
 	std::cout << "Printing Planner Details" << std::endl;
 	std::cout << std::endl;
-
-	std::cout << "Leaving from: " << this->getComingFromCity() << ", " << this->getComingFromState() 
-			<< " \tArriving to: " << this->getGoingToCity() << ", " << this->getGoingToState() 
-	<< std::endl;
+	std::cout << "Leaving from: " << this->getComingFromCity() << ", " << this->getComingFromState() << std::endl;
+	std::cout << "Arriving to: " << this->getGoingToCity() << ", " << this->getGoingToState() << std::endl;
 }
+
+/*
+	Maybe rework getting user trip details.
+*/
 
 void Planner::enterTripDetails() {
 	std::string leaving_city;
@@ -68,20 +70,21 @@ void Planner::enterTripDetails() {
 	std::string arriving_city;
 	std::string arriving_state;
 
-	std::cout << "What city are you flying from? Ex: Cleveland " << std::endl;
-	std::cin >> leaving_city;
+	std::cout << "What city are you flying from? Ex: New York City* " << std::endl;
+	std::getline(std::cin, leaving_city, '*');
 	this->setComingFromCity(leaving_city);
 
-	std::cout << "Ok, in what state are you leaving from? Ex: OH " << std::endl;
-	std::cin >> leaving_state;
+	std::cout << "Ok, in what state are you leaving from? Ex: NY* " << std::endl;
+	std::getline(std::cin, leaving_state, '*');
 	this->setComingFromState(leaving_state);
 
-	std::cout << "What is the city of your destination? Ex: Austin " << std::endl;
-	std::cin >> arriving_city;
+	std::cout << "What is the city of your destination? Ex: Cleveland* " << std::endl;
+	std::getline(std::cin, arriving_city, '*');
 	this->setGoingToCity(arriving_city);
 
-	std::cout << "Ok, what is the state of your destination? Ex: TX " << std::endl;
-	std::cin >> arriving_state;
+
+	std::cout << "Ok, what is the state of your destination? Ex: OH* " << std::endl;
+	std::getline(std::cin, arriving_state, '*');
 	this->setGoingToState(arriving_state);
 }
 
