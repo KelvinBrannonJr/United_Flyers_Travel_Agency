@@ -12,12 +12,18 @@ int main()
 	std::cout << "Welcome to United Flyers" << std::endl;
 	std::cout << "" << std::endl;
 
-	isRunning = true;
-	while (isRunning == true) {
-		displayMenu();
+	try {
+		isRunning = true;
+		while (isRunning == true) {
+			displayMenu();
 
-		std::cin >> user_choice;
-		menuSelection(user_choice);
+			std::cin >> user_choice;
+			menuSelection(user_choice);
+		}
+		throw std::runtime_error("Running routine in Main() while loop failed!");
+	}
+	catch (const std::exception& e) {
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 }
 
