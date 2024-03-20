@@ -52,7 +52,7 @@ std::string Payment::getCcvNumber() const {
 	return this->ccv_number;
 }
 
-// Utility
+// Payment Utility Methods
 void Payment::processPayment() {
 	std::string l_card_num;
 	std::string l_card_mth;
@@ -96,7 +96,6 @@ void Payment::displayPaymentInformation() {
 	std::cout << "Card CCV Number: " << this->getCcvNumber() << std::endl;
 }
 
-// Confimation Message
 void Payment::confirmationPaymentSuccessMsg() {
 	std::cout << std::endl;
 	std::cout << "Payment Process Complete!!" << std::endl;

@@ -55,7 +55,7 @@ std::string Booking::getGateId() const {
 	return this->gate_id;
 }
 
-// Utility
+// Booking Utility Methods
 int Booking::generateFlightNumber() {
 	int random_num;
 
@@ -80,7 +80,6 @@ Airlines Booking::generateAirline() {
 	return e_airline;
 }
 
-// Airline enum to string converter
 std::string Booking::airlineEnumToString(Airlines e_al) {
 
 	// Enum map to Strings
@@ -115,7 +114,6 @@ std::string Booking::generateGateId() {
 	return cipher;
 }
 
-// Booking processor
 void Booking::processBooking() {
 	int flight_num;
 	int customer_num;
@@ -142,7 +140,6 @@ void Booking::processBooking() {
 	std::cout << "Gate ID: " << gateID << std::endl;
 }
 
-// Confirm Purchase Booking
 void Booking::confirmBookingPurchase() {
 	char confirm_choice;
 	std::cout << "Would you like to purchase this booking? Y/N" << std::endl;
@@ -175,7 +172,7 @@ void Booking::confirmBookingPurchase() {
 	}
 }
 
-// Destructors
+// Booking Destructors
 Booking::~Booking() {
 	std::cout << "Booking object destroyed" << std::endl;
 }

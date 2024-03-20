@@ -8,7 +8,6 @@
 
 int main()
 {	
-	// FEATURE: implement <iomanip> for formatting
 	std::cout << "Welcome to United Flyers" << std::endl;
 	std::cout << std::endl;
 
@@ -20,7 +19,7 @@ int main()
 			std::cin >> user_choice;
 			menuSelection(user_choice);
 		}
-		throw std::runtime_error("Running routine in Main() while loop failed!");
+		throw std::runtime_error("Routine in Main() while loop was closed ");
 	}
 	catch (const std::exception& e) {
 		std::cout << "Exception " << e.what() << std::endl;

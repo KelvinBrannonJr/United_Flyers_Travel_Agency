@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 
-// Variables
+
+// Class Main Members
 std::string flight_from;
 std::string flight_to;
 
@@ -9,13 +10,13 @@ char user_choice;
 
 bool isRunning = false;
 
-// Main Function
+// Class Main Function Method
 bool quitUI();
 
 
 // Feature Functions
 void planTrip();
 
-// Utility healper functions
+// Class Main Utility healper functions
 void displayMenu();
 void menuSelection(char choice);

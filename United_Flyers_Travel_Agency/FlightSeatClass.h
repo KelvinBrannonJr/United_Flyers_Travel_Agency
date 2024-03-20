@@ -2,7 +2,7 @@
 #include<string>
 
 
-// Enum for Class Seating and Parallel string array 
+// Enum for seating classes
 enum SeatingClass { ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST_CLASS };
 
 

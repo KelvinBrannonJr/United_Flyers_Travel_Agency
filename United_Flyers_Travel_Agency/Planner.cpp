@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-// Planner Constructor
+// Planner Constructors
 Planner::Planner() {
 	this->coming_from_city = "None";
 	this->coming_from_state = "None";
@@ -51,7 +51,7 @@ std::string Planner::getGoingToState() const {
 	return this->going_to_state;
 }
 
-// Planner Utility
+// Planner Utility Methods
 void Planner::printTrip() {
 	std::cout << std::endl;
 	std::cout << "Printing Planner Details" << std::endl;
@@ -60,10 +60,6 @@ void Planner::printTrip() {
 	std::cout << "Arriving to: " << this->getGoingToCity() << ", " << this->getGoingToState() << std::endl;
 }
 
-/*
-	BUG: getlines() is storing trip details in serparate lines making printTrip() format wrongly.
-		Maybe rework getting user trip details.
-*/
 
 void Planner::enterTripDetails() {
 	std::string leaving_city;
@@ -94,7 +90,7 @@ void Planner::enterTripDetails() {
 	this->setGoingToState(arriving_state);
 }
 
-// Destructor
+// Planner Destructor
 Planner::~Planner() {
 	std::cout << "Planner destructor called" << std::endl;
 }

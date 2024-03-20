@@ -2,7 +2,7 @@
 #include<iostream>
 
 
-// Constructor
+// Estimate Constructors
 Estimate::Estimate() {
 	this->time_hours = 0;
 	this->num_of_seats = 0;
@@ -53,7 +53,7 @@ SeatingClass Estimate::getSeatClass() const {
 }
 
 
-// Utility
+// Estimate Utility Methods
 std::string Estimate::convertHours(unsigned int hrs) {
 	std::string time;
 	if (hrs > 0 && hrs < 12) {
@@ -175,6 +175,8 @@ void Estimate::calcCost() {
 	std::cout << "Your total cost for the selected flight options: " << "$" << final_seat_total + final_luggage_total << std::endl;
 }
 
+
+// Estimate Destructor
 Estimate::~Estimate() {
 	std::cout << "Estimate object destroyed" << std::endl;
 }

@@ -37,7 +37,7 @@ class Estimate {
 		int getNumOfLuggage() const;
 		SeatingClass getSeatClass() const;
 
-		// Utility
+		// Estimate Utility Methods
 		std::string convertHours(unsigned int hrs);
 		int calcSeatTotal(unsigned int num_seats, SeatingClass seat_tier);
 		int calcLuggageTotal(unsigned int num_luggage);

@@ -29,7 +29,7 @@ class Booking {
 		Airlines getAirlineName() const;
 		std::string getGateId() const;
 
-		// Utility
+		// Booking Utility Methods
 		int generateFlightNumber();
 		int generateCustomerNumber();
 		Airlines generateAirline();
@@ -38,7 +38,7 @@ class Booking {
 		void processBooking();
 		void confirmBookingPurchase();
 		
-		// Destructor
+		// Booking Destructor
 		~Booking();
 		
 };
