@@ -71,7 +71,7 @@ void menuSelection(char choice) {
 		break;
 
 	case '2':
-		std::cout << user_choice << ": You would like a price estimate of a for a trip." << std::endl;
+		std::cout << user_choice << ": You would like a price estimate for a trip." << std::endl;
 		estimateTripCost();
 		break;
 
